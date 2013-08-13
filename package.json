@@ -1,0 +1,14 @@
+{
+  "name": "webrtc-client",
+  "version": "0.0.0",
+  "description": "A light wrapper around the WebRTC API.",
+  "main": "index.js",
+  "dependencies": {
+    "smerge": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicholas Mason",
+  "license": "BSD"
+}
