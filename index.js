@@ -7,8 +7,11 @@ var RTCPeerConnection =
   window.webkitRTCPeerConnection ||
   window.RTCPeerConnection;
 var RTCSessionDescription =
-  window.mozRTCSessionDescription || window.RTCSessionDescription;
-var RTCIceCandidate = window.mozRTCIceCandidate || window.RTCIceCandidate;
+  window.mozRTCSessionDescription ||
+  window.RTCSessionDescription;
+var RTCIceCandidate =
+  window.mozRTCIceCandidate ||
+  window.RTCIceCandidate;
 
 function Client(options) {
   if (!(this instanceof Client)) {
@@ -26,8 +29,6 @@ function Client(options) {
   EventEmitter.call(this)
   return this
 }
-module.exports = Client
-
 util.inherits(Client, EventEmitter)
 
 Client.prototype.connect = function (obj) {
@@ -218,4 +219,6 @@ Client.prototype.toggle = function (tracks, enabled) {
 Client.prototype.send = function (message) {
   this.socket.send(JSON.stringify(message))
 }
+
+module.exports = Client
 
