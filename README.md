@@ -18,7 +18,7 @@ getUserMedia({ audio: true, video: true }, function (stream) {
     video.src = null
   })
   client.connect()
-})
+}, function () { /* noop */ })
 ```
 
 # Methods
