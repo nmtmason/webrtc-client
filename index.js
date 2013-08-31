@@ -120,16 +120,10 @@ Client.prototype.createPeerConnection = function (id) {
     pc.stream = event.stream
     self.emit('stream add', event.stream, id)
   }
-  // Events not firing - why?
-  // For now handling onremovestream as part of destroyPeerConnection
-  //pc.onopen = function () { /* noop */ }
-  //pc.onclose = function () { /* noop */ }
-  /*
   pc.onremovestream = function (event) {
     pc.stream = null
     self.emit('stream remove', event.stream, id)
   }
-  */
   this.peerConnections[id] = pc
   return pc;
 }
