@@ -58,10 +58,6 @@ Client.prototype.connect = function (obj) {
     self.close()
   }
 
-  this.on('join', function (message) {
-    var pc = self.createPeerConnection(message.id)
-    pc.addStream(self.stream)
-  })
   this.on('peers', function (message) {
     var peers = message.peers
     for (var i = 0; i < peers.length; i += 1) {
@@ -71,6 +67,10 @@ Client.prototype.connect = function (obj) {
       self.sendOffer(id)
       self.peerConnections[id] = pc
     }
+  })
+  this.on('join', function (message) {
+    var pc = self.createPeerConnection(message.id)
+    pc.addStream(self.stream)
   })
   this.on('offer', function (message) {
     self.receiveOffer(message.id, message)
