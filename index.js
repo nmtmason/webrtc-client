@@ -136,13 +136,11 @@ Client.prototype.createPeerConnection = function (id) {
 
 Client.prototype.destroyPeerConnection = function (id) {
   var pc = this.peerConnections[id]
+  var stream = pc.stream
   if (pc) {
-    delete this.peerConnections[id]
-    if (pc.stream) {
-      pc.stream = null
-      this.emit('stream remove', pc.stream, id)
-    }
     pc.close()
+    delete this.peerConnections[id]
+    this.emit('stream remove', stream, id)
   }
 }
 
