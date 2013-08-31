@@ -55,7 +55,7 @@ Client.prototype.connect = function (obj) {
     self.emit('error', err)
   }
   this.socket.onclose = function () {
-    /* handled by Client.close() */
+    self.close()
   }
 
   this.on('join', function (message) {
