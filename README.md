@@ -71,6 +71,7 @@ Fires when a stream is removed. `cb` takes two arguments:
 * `id` - The id of the associated peer.
 
 ## Other events
+### client.on('close', cb)
 ### client.on('peers', cb)
 ### client.on('leave', cb)
 ### client.on('join', cb)
