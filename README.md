@@ -74,8 +74,4 @@ Fires when a stream is removed. `cb` takes two arguments:
 ### client.on('peers', cb)
 ### client.on('leave', cb)
 ### client.on('join', cb)
-### client.on('mute', cb)
-### client.on('unmute', cb)
-### client.on('pause', cb)
-### client.on('play', cb)
 

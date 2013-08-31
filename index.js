@@ -186,25 +186,21 @@ Client.prototype.receiveCandidate = function (id, message) {
 Client.prototype.mute = function () {
   this.toggle(this.stream.getAudioTracks(), false)
   this.muted = true
-  this.emit('mute')
 }
 
 Client.prototype.unmute = function () {
   this.toggle(this.stream.getAudioTracks(), true)
   this.muted = false
-  this.emit('unmute')
 }
 
 Client.prototype.pause = function () {
   this.toggle(this.stream.getVideoTracks(), false)
   this.paused = true
-  this.emit('pause')
 }
 
 Client.prototype.play = function () {
   this.toggle(this.stream.getVideoTracks(), true)
   this.paused = false
-  this.emit('resume')
 }
 
 Client.prototype.toggle = function (tracks, enabled) {
