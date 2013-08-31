@@ -116,6 +116,12 @@ Client.prototype.createPeerConnection = function (id) {
       })
     }
   }
+  pc.oniceconnectionstatechange = function (event) {
+    var target = event.target
+    if (target.iceConnectionState === 'closed') {
+      self.destroyPeerConnection(id)
+    }
+  }
   pc.onaddstream = function (event) {
     pc.stream = event.stream
     self.emit('stream add', event.stream, id)
