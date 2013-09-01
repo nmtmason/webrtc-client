@@ -65,7 +65,6 @@ Client.prototype.connect = function (obj) {
       var pc = self.createPeerConnection(id)
       pc.addStream(self.stream)
       self.sendOffer(id)
-      self.peerConnections[id] = pc
     }
   })
   this.on('join', function (message) {
