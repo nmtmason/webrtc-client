@@ -21,7 +21,6 @@ function Client(options) {
   this.debug = options.debug
   this.stream = options.stream
   this.audio = this.video = true
-  this.muted = this.paused = false
   this.peerConnections = {}
   var url = navigator.mozGetUserMedia ?
     'stun:23.21.150.121' : 'stun:stun.l.google.com:19302'
