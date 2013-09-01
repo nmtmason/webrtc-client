@@ -182,32 +182,6 @@ Client.prototype.receiveCandidate = function (id, message) {
   pc.addIceCandidate(new RTCIceCandidate(message));
 }
 
-Client.prototype.mute = function () {
-  this.toggle(this.stream.getAudioTracks(), false)
-  this.muted = true
-}
-
-Client.prototype.unmute = function () {
-  this.toggle(this.stream.getAudioTracks(), true)
-  this.muted = false
-}
-
-Client.prototype.pause = function () {
-  this.toggle(this.stream.getVideoTracks(), false)
-  this.paused = true
-}
-
-Client.prototype.play = function () {
-  this.toggle(this.stream.getVideoTracks(), true)
-  this.paused = false
-}
-
-Client.prototype.toggle = function (tracks, enabled) {
-  for (var i = 0; i < tracks.length; i += 1) {
-    tracks[i].enabled = enabled
-  }
-}
-
 Client.prototype.send = function (message) {
   this.socket.send(JSON.stringify(message))
 }

@@ -50,12 +50,6 @@ This could contain application specific information for the server such as the r
 
 Close connection to the signalling server and any connected peers.
 
-## Other methods
-### client.mute()
-### client.unmute()
-### client.pause()
-### client.play()
-
 # Events
 
 ## client.on('stream add', cb)
